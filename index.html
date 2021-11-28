@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#B12A34">
+        <link rel="apple-touch-icon" href="logos/rowdy.png">
+        <link rel="shortcut icon" href="#">
+        <title>Calandar App</title>
+        <!--Custon stylesheet-->
+        <!--<link rel="stylesheet" href="css/style.css">-->
+        <!--Bootstrap CDN-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!--Web Manifest-->
+        <link rel="manifest" href="manifest.json">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <h1 class="navbar-brand" href="#">Calandar Maker</h1>
+            <ul>
+            <li><a onclick="displayForm()">Add Class</a></li>
+            <li><a onclick="displayTable()">Schedule</a></li>
+            </ul>
+          </nav>
+
+        <center><form id="calandarForm" class="form-group col-sm-12" >
+            <div>
+                <label for="className">Class Name</label><br/>
+                <input class='form-control' id="className" name="className" type="text" required>
+            </div>
+            <div>
+                <label for="classType">Class Type</label><br/>
+                <select class='form-control' id="classType" name="classType" required>
+                    <option>COMP</option>
+                    <option>EECE</option>
+                    <option>MATH</option>
+                </select>
+            </div>
+            <div>
+                <label for="classNumber">Class Number</label><br/>
+                <input class='form-control' id="classNumber" name="classNumber" type="number" required>
+            </div>
+            <div>
+                <label for="sectionNumber">Section Number</label><br/>
+                <input class='form-control' id="sectionNumber" name="sectionNumber" type="number" required>
+            </div>
+            <div>
+                <label for="startTime">Start Time</label><br/>
+                <input class='form-control' id="startTime" name="startTime" type="time" required>
+            </div><br/>
+            <div required>
+                <label for="classDays">Class Days:</label><br/>
+                <label class="checkbox-inline">Monday</label>
+                <input id='classDaysMon' name='classDaysMon' type='checkbox' value='Mon' /><br/>
+                <label class="checkbox-inline">Tuesday</label>
+                <input id='classDaysTues' name='classDaysTues' type='checkbox' value='Tues' /><br/>
+                <label class="checkbox-inline">Wednesday</label>
+                <input id='classDaysWed' name='classDaysWed' type='checkbox' value='Wed' /><br/>
+                <label class="checkbox-inline">Thursday</label>
+                <input id='classDaysThurs' name='classDaysThurs' type='checkbox' value='Thurs' /><br/>
+                <label class="checkbox-inline">Friday</label>
+                <input id='classDaysFri' name='classDaysFri' type='checkbox' value='Fri' /><br/>
+                <label class="checkbox-inline">Saturday</label>
+                <input id='classDaysSat' name='classDaysSat' type='checkbox' value='Sat' /><br/>
+            </div>
+            <br/><input class='form-control col-sm-4' type="submit">
+        </form></center>
+        <div id="Tab" class="table table-responsive table-hover container overflow-auto col-sm-12"></div>
+
+        <!--JQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <!--Validator-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+        <script src="scripts/index.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
