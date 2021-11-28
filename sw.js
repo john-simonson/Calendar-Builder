@@ -1,7 +1,7 @@
 self.addEventListener("install", e => {
     e.waitUntil(
         caches.open("static").then(cache => {
-            return cache.addAll(["./", "/logos/rowdyBig.png"]);
+            return cache.addAll(["./", "./logos/rowdy.png/"]);
         })
     );
     console.log("Install! complete");
