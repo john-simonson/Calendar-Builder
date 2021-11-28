@@ -27,6 +27,10 @@ function first(){
 }
 
 function deleteClasses(){
+    var r = confirm("Do you want to delete all classes?");
+    if (r == true){
+        localStorage.clear();
+    }
     console.log("deleteClasses");   
 }
 
