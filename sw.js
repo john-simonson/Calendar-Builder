@@ -1,7 +1,7 @@
 self.addEventListener("install", e => {
     e.waitUntil(
         caches.open("static").then(cache => {
-            return cache.addAll(["./", "./index.html", "./scripts/jquery-3.6.0.min.js", "./scripts/script.js", "./scripts/index.js", "./logos/rowdy.png", "./logos/rowdyBig.png"]);
+            return cache.addAll(["./"]);
         })
     );
     console.log("Install! complete");
