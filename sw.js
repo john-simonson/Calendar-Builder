@@ -1,7 +1,7 @@
 self.addEventListener("install", e => {
     e.waitUntil(
         caches.open("static").then(cache => {
-            return cache.addAll(["./"]);
+            return cache.addAll(["./", "./scripts/script.js"]);
         })
     );
     console.log("Install! complete");
