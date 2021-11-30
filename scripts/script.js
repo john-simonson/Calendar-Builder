@@ -175,7 +175,6 @@ function createTable(){
     return (new Class(class_name, class_type, class_number, section_number, start_time, days));
 }
 
-
 function parseCalendar(){
     var url = "https://www.uml.edu/registrar/calendars/2021-fall-undergrad.aspx";
     $.get('https://api.allorigins.win/get?url=' + encodeURIComponent(url) + '&callback=?', function(data){
@@ -189,7 +188,7 @@ function parseCalendar(){
         });
         document.getElementById("txt").innerHTML = tmp;
         console.log(stack);
-        localStorage.setItem("calendarKey", stack)
+        localStorage.setItem("calendarKey", JSON.stringify(stack))
         console.log(stack)
         return stack
         
