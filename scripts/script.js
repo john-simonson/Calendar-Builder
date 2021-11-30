@@ -72,7 +72,9 @@ function displayTable(){
             var classArray = [];
             var content = "<center><table><tr><th>Class Name</th><th>Class Type</th><th>Class Number</th><th>Section Number</th><th>Start Time</th></tr>"
             for (i = 0; i <= localStorage.length; i++){
-                classArray.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+                if(JSON.parse(localStorage.getItem(localStorage.key(i)).name)).name != "calendarKey"){
+                    classArray.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+                }
             }
             console.log(JSON.parse(localStorage.getItem(classArray[0].name)).type);
             for (var key in localStorage){
