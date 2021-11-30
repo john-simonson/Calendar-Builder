@@ -13,6 +13,7 @@ var date = new Date();
 
 $(function(){
     $("#calandarForm").hide();
+    parseCalendar();
     first();
 });
 
