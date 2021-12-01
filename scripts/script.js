@@ -26,13 +26,6 @@ function first(){
     }
 }
 
-function deleteClasses(){
-    var r = confirm("Do you want to delete all classes?");
-    if (r == true){
-        localStorage.clear();
-    }
-}
-
 function minusWeek(){
     date.setDate(date.getDate() - 7);
     displayTable();
@@ -63,8 +56,7 @@ function displayTable(){
     $("#calandarForm").hide();
     $('#Tab').html("");
     if($("#Tab").html() == ""){
-        $('#Tab').append('<center><p>' + (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear() + '</p></center>');
-        $('#Tab').append('<button onclick="deleteClasses()">Delete All Classes</button>');
+        $('#Tab').append('<center><p>' + date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear() + '</p></center>');
         $('#Tab').append('<div><center><button onclick="minusWeek()" class="form-group btn btn-light col-sm-3"> -1 week </button><button onclick="minusDay()" class="form-group btn btn-light col-sm-3"> -1 day </button><button onclick="plusDay()" class="form-group btn btn-light col-sm-3"> +1 day </button><button onclick="plusWeek()" class="form-group btn btn-light col-sm-3"> +1 week </button></center></div>');
         if(localStorage.length != 0){
             var classArray = [];
