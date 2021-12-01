@@ -9,19 +9,12 @@ class Class{
     }
 }
 
-var academicCalendar = [];
 var date = new Date();
 
 $(function(){
     $("#calandarForm").hide();
     if(window.navigator.onLine == true){
         parseCalendar();
-        serviceWorkerRegistration.update();
-        caches.open('v1').then(function(cache) {
-            cache.delete('./*').then(function(response) {
-              console.log("delete cache");
-            });
-          })
         console.log(JSON.parse(localStorage.getItem("calendarKey")).length);
     }
     else if(localStorage.getItem("calendarKey") != null){
