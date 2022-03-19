@@ -31,7 +31,7 @@ $(function(){
 });
 
 function first(){
-    if (localStorage.length == 0){
+    if (localStorage.length == 1){
         console.log(localStorage.length);
         displayForm();
     }
@@ -43,7 +43,11 @@ function first(){
 function deleteClasses(){
     var r = confirm("Do you want to delete all classes?");
     if (r == true){
-        localStorage.clear();
+        for (i = 0; i <= localStorage.length; i++){
+            if(localStorage.key(i) != "calendarKey"){
+                localStorage.removeItem(localStorage.key(i));
+            }
+        }
     }
     console.log("deleteClasses");   
 }
@@ -129,10 +133,21 @@ function displayTable(){
 }
 
 function validator(){
+    jQuery.validator.addMethod("contains",
+        function (value, element, param) {
+        var contains = false;
+        for (i = 0; i < param.length; i++) {
+            if (!(value.includes(param[i]))) {
+                contains = true;
+            }
+        }
+        return this.optional(element) || contains;
+    },"Error! Reserved Word.");
     $("#calandarForm").validate({
         rules: {
             className: {
-                required: true
+                required: true,
+                contains: "calendarKey"
             },
             classType: {
                 required: true
@@ -158,6 +173,7 @@ function validator(){
             var obj = createTable();
             localStorage.setItem(obj.name, JSON.stringify(obj));
             console.log(JSON.parse(localStorage.getItem(obj.name)));
+            alert("Class Added!");
         }
     });
 }
